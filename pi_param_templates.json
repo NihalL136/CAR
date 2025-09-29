@@ -1,0 +1,1973 @@
+{
+  "global": {
+    "pi_code": "MESPH2_SCHEMA_V1",
+    "pi_version": 1,
+    "design_language": "en_US",
+    "units": [
+      "°C",
+      "mg",
+      "kg",
+      "g"
+    ],
+    "enums": {
+      "marqtype_id": {
+        "TEXT": 1,
+        "NUMBER": 2,
+        "DATE": 3,
+        "TIME": 4,
+        "SIGNATURE": 5,
+        "PICTURE": 27,
+        "LINK": 8,
+        "ESIGN": 21,
+        "BARCODE_IDENTIFICATION": 18,
+        "CONTAINER_IDENTIFICATION": 22,
+        "EQUIPMENT_IDENTIFICATION": 24,
+        "MANUFACTURING_DECLARATION": 17,
+        "LABELING_DEFAULT": 14,
+        "LABEL_IDENTIFICATION_DEFAULT": 15,
+        "MANDATORY_ALERT": 13,
+        "LIST_TAG": 16,
+        "SCRIPT_TAG": 9,
+        "WEIGHING_TAG": 6,
+        "EMAIL": 30,
+        "EQUIPMENT_PROPERTY_MODIFICATION_TAG": 30,
+        "READ_EQP_PROP_TAG": 30,
+        "DISPLAY_EQUIPMENT_PROPERTY_TAG": 30,
+        "LIST_MODIFICATION_EQ_PROP_MOD_TAG": 30,
+        "PACKAGING_TAG": 30,
+        "EFFICIENCY_APPLICATION_TAG": 25,
+        "MOVE_TAG": 28,
+        "LOADING_TAG": 30
+      },
+      "status": [
+        "C",
+        "V",
+        "D"
+      ]
+    },
+    "pi_header": {
+      "GUID": "68A0DD0DA18A4DF69697CFF0C075D32D",
+      "ILTARGET": "E2S_NULL_STRING",
+      "EventPI": "E2S_NULL_STRING",
+      "EventControlStrategy": "E2S_NULL_STRING",
+      "EventPhaseType": "E2S_NULL_STRING",
+      "EventCallBack": "0",
+      "XFPVersion": "22110000",
+      "Description": "INITIAL 6 TAGS BASIC SCHEMA",
+      "Workflow": "0",
+      "CommentAfterReexec": "Y",
+      "CommentApForc": "Y",
+      "Etat": "C",
+      "Lib_Type": "Master",
+      "Lib_Famille": "Manufacturing",
+      "Famille": "0"
+    },
+    "script_objects": [
+      {
+        "ObjectDll": "E2S_PIRecordIHM",
+        "ObjectClass": "claPIRecordText",
+        "ObjectName": "mRecordText"
+      },
+      {
+        "ObjectDll": "RadioServer",
+        "ObjectClass": "claRFInterface",
+        "ObjectName": "mRFInterface"
+      },
+      {
+        "ObjectDll": "E2S_PIProcessOcx",
+        "ObjectClass": "claOTAutoTests",
+        "ObjectName": "mOTAutoTests"
+      },
+      {
+        "ObjectDll": "E2S_Technical_Kernel",
+        "ObjectClass": "claGlobal",
+        "ObjectName": "mGlob"
+      },
+      {
+        "ObjectDll": "E2S_Equipment",
+        "ObjectClass": "claEquipmentEPEIO",
+        "ObjectName": "mEquipEPEIO"
+      },
+      {
+        "ObjectDll": "E2S_PIRecord",
+        "ObjectClass": "claManufacturingData",
+        "ObjectName": "mData"
+      },
+      {
+        "ObjectDll": "MSXML2",
+        "ObjectClass": "DOMDocument",
+        "ObjectName": "mDOM"
+      },
+      {
+        "ObjectDll": "E2S_Scripts",
+        "ObjectClass": "claScriptCallBack",
+        "ObjectName": "mCallBack"
+      },
+      {
+        "ObjectDll": "E2S_PIEdition",
+        "ObjectClass": "claBindParameter",
+        "ObjectName": "mBindParameter"
+      },
+      {
+        "ObjectDll": "E2S_PIEdition",
+        "ObjectClass": "claAutobindingContext",
+        "ObjectName": "mAutobindingContext"
+      },
+      {
+        "ObjectDll": "E2S_Interfaces",
+        "ObjectClass": "claAuthentificationAD",
+        "ObjectName": "mAuthentificationAD"
+      },
+      {
+        "ObjectDll": "E2S_PIRecord",
+        "ObjectClass": "claAnnex",
+        "ObjectName": "mAnnex"
+      },
+      {
+        "ObjectDll": "E2S_PFC_Business",
+        "ObjectClass": "claAlert",
+        "ObjectName": "mAlertElement"
+      },
+      {
+        "ObjectDll": "E2S_Scripts",
+        "ObjectClass": "claScriptCall",
+        "ObjectName": "mAPIScript"
+      }
+    ]
+  },
+  "TAGS": {
+    "DECLARATION_ADJUSTMENT": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "DECL_ADJUST_TITLE",
+          "marqtype": "19",
+          "start_mod": "M",
+          "adjdecl_identifier": "[MESPH2_REVENGG_DECLADJ01]",
+          "adjdecl_quantity": "1",
+          "adjdecl_transmotif": "MFG/DC",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 0,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "STOCK_ADJUSTMENT": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "STOCK_ADJUSTMENT_TITLE",
+          "marqtype": "29",
+          "start_mod": "M",
+          "adjstock_identifier": "[MESPH2_REVENGG_STOCKADJ01_ID]",
+          "adjstock_quantity": "1",
+          "adjstock_transmotif": "CONT/ADJST",
+          "adjstock_razcontainer": "0",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 0,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "RELABELLING": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "RELABELING_TITLE",
+          "marqtype": "20",
+          "start_mod": "M",
+          "relabelling_barcode": "[MES_REVENGG_BARCOD01]",
+          "relabelling_labelmodel": "UNKNOWN // TODO",
+          "relabelling_nbentities": "UNKNOWN // TODO",
+          "relabelling_nblabels": "UNKNOWN // TODO",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 0,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "TABLE": {
+      "html": {
+        "element": "table",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "caption": "TABLE_HEADER_3X3",
+          "rows": "3",
+          "cols": "3",
+          "width_mm": "150",
+          "border": "1",
+          "table_layout": "fixed",
+          "execution": "horizontal",
+          "table_browse_order": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 0,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LOADING_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "LOADINGTAG_TITLE",
+          "marqtype": "30",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "start_mod": "M",
+          "guid": "{F27940A1-DC05-430A-BBAE-7FF3B4DC859E}",
+          "loadingtruck_locationcode": "[MESREVENGG_LOAD01_TRUCK_LOC]",
+          "loadingtruck_zone": " ",
+          "loadingtruck_listtruck": "0",
+          "loadingtruck_consumption": "0",
+          "loadingtruck_returncode": " ",
+          "loadingtruck_lotcontrol": "1",
+          "loadingtruck_lotcontrolaccept": "1",
+          "loadingtruck_lotcontrolpaccept": "1",
+          "loadingtruck_lotcontrolquarantine": "1",
+          "loadingtruck_lotcontroltry": "1"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "MOVE_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "MOVE TAG_TITLE",
+          "marqtype": "28",
+          "insert_report": "0",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "start_mod": "M",
+          "move_type": "Equipement",
+          "move_hassource": "1",
+          "move_hascode": "1",
+          "move_code": "[MES_REVENGG_MOVETAG01_SRCCODE]",
+          "move_hasclass": "0",
+          "move_class": "",
+          "move_hasitem": "0",
+          "move_item": "",
+          "move_haslot": "0",
+          "move_lot": "",
+          "move_byzone": "0",
+          "move_location": "[MES_REVENGG_MOVETAG01_TGTLOC]",
+          "move_zone": "",
+          "move_hasreturnsource": "0",
+          "move_returnsource": "",
+          "move_hasreturnlocation": "0",
+          "move_returnlocation": "",
+          "move_hasreturnexecution": "0",
+          "move_returnexecution": "",
+          "move_automove": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 28,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "EFFICIENCY_APPLICATION_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "EFFICIENCY_APPLICATION_TAG_TITLE",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "EFFICIENCY_APPLICATION_TAG_TITLE [<PARAM_CODE>] (0000/0001/1...0000/0001/1)",
+          "marqtype": "25",
+          "inputtype": "O",
+          "paramtype": "2",
+          "selectiontype": "0",
+          "selection": "0000/0001/1...0000/0001/1",
+          "insert_report": "1",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 25,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "PACKAGING_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "Packaging_TITLE",
+          "marqtype": "30",
+          "guid": "{81C2B21D-3950-4B7B-BAEF-D06E21D75E4A}",
+          "inputtype": "O",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "colisage_selectiontype": "0",
+          "colisage_selection": "0000/0001/1...0000/0001/1",
+          "colisage_returncode": " ",
+          "colisage_lotcontrol": "1",
+          "colisage_instructiontype": "1",
+          "colisage_label": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LIST_MODIFICATION_EQ_PROP_MOD_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "List Modification (Equipment property)_TITLE",
+          "marqtype": "30",
+          "guid": "{042DB1E7-1935-42AD-A738-2C91FDFDD2DC}",
+          "inputtype": "O",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "maniplists_code": "[MESPH2_REVENGG_LSTMOD01_EQP]",
+          "maniplists_property_code": "[MESPH2_REVENGG_LSTMOD01_PROP]",
+          "maniplists_selectiontype": "0",
+          "maniplists_selection": "0000/0001/1...0000/0001/1",
+          "maniplists_identifianttype": " ",
+          "maniplists_identifiant": " ",
+          "maniplists_returncode": " ",
+          "maniplists_insertreport": "1",
+          "maniplists_actiontype": "1",
+          "maniplists_ticketweighing": "True"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "DISPLAY_EQUIPMENT_PROPERTY_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "Display equipment property_TITLE",
+          "marqtype": "30",
+          "guid": "{6798E9B9-D134-437D-A357-DD77C3BCA377}",
+          "inputtype": "O",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "displayequip_code": "[MESPH2_REVENGG_DISPEQPROP01]",
+          "displayequip_property_code": "[MESPH2_REVENGG_DISPEQPROP01_PR]",
+          "displayequip_returncode": " "
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "READ_EQP_PROP_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "Read_Equipment_Properly_TITLE",
+          "marqtype": "30",
+          "guid": "{AF67319E-8291-45B0-925C-904192E1CA9B}",
+          "inputtype": "O",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "readequip_code": "[MESPH2_REVENGG_READEQPROP01_EQ]",
+          "readequip_property_type": "1",
+          "readequip_property_code": "[MESPH2_REVENGG_READEQPRO01_TXT]",
+          "readequip_property_value": "1",
+          "readequip_property_name": " ",
+          "readequip_property_expipritydate": " ",
+          "readequip_property_expirityhours": " ",
+          "readequip_property_expirity": " ",
+          "readequip_returncode": " "
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "EQUIPMENT_PROPERTY_MODIFICATION_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "EQ_MOD_TITLE",
+          "marqtype": "30",
+          "guid": "{E5364001-C559-46DD-9E94-43C17575D25B}",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "equip_code": "[MES_REVENGG_EQMODTAG01_EQP]",
+          "equip_properties": "<PROPERTIES><HEADER><CAPTION>Code</CAPTION><TYPE>0</TYPE><CODE>Code</CODE><KEYFIELD>True</KEYFIELD></HEADER><HEADER><CAPTION>Type</CAPTION><TYPE>1</TYPE><CODE>Type</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>Value</CAPTION><TYPE>0</TYPE><CODE>Valeur</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>Return code</CAPTION><TYPE>0</TYPE><CODE>Retour</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>/HiddenReturnKey/</CAPTION><TYPE>3</TYPE><CODE>HiddenReturnKey</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>/HiddenValueEQPKey/</CAPTION><TYPE>3</TYPE><CODE>HiddenValueEQPKey</CODE><KEYFIELD>False</KEYFIELD></HEADER></PROPERTIES>",
+          "equip_states": "<PROPERTIES><HEADER><CAPTION>Code</CAPTION><TYPE>0</TYPE><CODE>Code</CODE><KEYFIELD>True</KEYFIELD></HEADER><HEADER><CAPTION>Type</CAPTION><TYPE>1</TYPE><CODE>Type</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>Value</CAPTION><TYPE>0</TYPE><CODE>Valeur</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>Return code</CAPTION><TYPE>0</TYPE><CODE>Retour</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>/HiddenReturnKey/</CAPTION><TYPE>3</TYPE><CODE>HiddenReturnKey</CODE><KEYFIELD>False</KEYFIELD></HEADER><HEADER><CAPTION>/HiddenValueEQPKey/</CAPTION><TYPE>3</TYPE><CODE>HiddenValueEQPKey</CODE><KEYFIELD>False</KEYFIELD></HEADER></PROPERTIES>",
+          "modifeqp_reftimestamp": "1",
+          "modifeqp_refday": "",
+          "modifeqp_reftime": "",
+          "modifeqp_refdaytime": "",
+          "equip_returnexecution": ""
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "EMAIL": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "email_title",
+          "marqtype": "30",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "inputtype": "O",
+          "guid": "{C1FD52C6-6D80-4E91-8DD3-2282BD191A88}",
+          "mail_from": "email_sender@mailid",
+          "mail_to": "email_recipient@mailid",
+          "mail_subject": "email_subject",
+          "mail_message": "email_body_text_default state",
+          "mail_returncode": " "
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 30,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "E2S_NULL_STRING",
+              "2": "E2S_NULL_STRING",
+              "3": "E2S_NULL_STRING",
+              "4": "E2S_NULL_STRING",
+              "5": "E2S_NULL_STRING",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "WEIGHING_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "WEIGHING_TITLE",
+          "marqtype": "6",
+          "start_mod": "A",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "weigth_hasret": "0",
+          "weigth_ret": "",
+          "weigth_acq": "MES_REVENGG_WEIGHTAG01_ACQRES",
+          "weigth_balance_used": "MES_REVENGG_WEIGH01_SCALEPAR",
+          "weigth_action": "0",
+          "weigth_zero": "1",
+          "weigth_reuse": "1",
+          "weigth_workstation": "LIN64015686",
+          "weigth_balance": "SCALE1"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 6,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "null",
+              "2": "null",
+              "3": "-999999999.99",
+              "4": "999999999.99",
+              "5": "999999999.99",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "SCRIPT_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "SCRIPT_TITLE",
+          "marqtype": "9",
+          "start_mod": "A",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "version": "1",
+          "comment": "0",
+          "resume": "0",
+          "resume_label": "0",
+          "parameters": "insLanguagecode=CG_LANGUAGE_CODE;",
+          "code": "CG DISPLAY ALL LISTS"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 9,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "E2S_NULL_STRING",
+              "2": "E2S_NULL_STRING",
+              "3": "E2S_NULL_STRING",
+              "4": "E2S_NULL_STRING",
+              "5": "E2S_NULL_STRING",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LIST_TAG": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "type": "button",
+          "value": "LIST_TITLE",
+          "marqtype": "16",
+          "start_mod": "M",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "inputtype": "O",
+          "e2s_list_identifier": "4",
+          "e2s_list_parameters": "1=[ARA_REASON_OF_LOSS_LIST_ID];2=[CG_LANGUAGE_CODE];",
+          "e2s_list_fields": "1=[ARA_REASON_OF_LOSS_RANK];2=[ARA_REASON_OF_LOSS_SEL];"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 16,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0",
+              "4": "E2S_NULL_STRING",
+              "5": "E2S_NULL_STRING",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "MANDATORY_ALERT": {
+      "html": {
+        "element": "img",
+        "attributes": {
+          "title": "Remark mandatory",
+          "class": "InputComment",
+          "id": "<LINK_ID_INT>",
+          "src": "E:\\OPEXPH\\SIMATICIT_EBR\\RESSOURC\\img_moremoblig.gif",
+          "marqtype": "13",
+          "start_mod": "A",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "type": "1"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 13,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "E2S_NULL_STRING",
+              "2": "E2S_NULL_STRING",
+              "3": "E2S_NULL_STRING",
+              "4": "E2S_NULL_STRING",
+              "5": "E2S_NULL_STRING",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "MANUFACTURING_DECLARATION": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "MANUFACTURING DECL_ TITLE",
+          "marqtype": "17",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "start_mod": "A",
+          "decl_itemtype": "1",
+          "decl_phase": "",
+          "decl_sequence": "",
+          "decl_dose": "",
+          "decl_itemcode": "[GENAI_REVENGG_MFGDEC_ITEMCODE]",
+          "decl_conditionedapproval": "0",
+          "decl_lot": "[GENAI_REVENGG_MFGDEC_LOT]",
+          "decl_mandate": "[GENAI_REVENGG_MFGDEC_DFG]",
+          "decl_quantity": "[GENAI_REVENGG_MFGDEC_QUANTITY]",
+          "decl_transmotif": "MFG/MDCL",
+          "decl_haslabel": "0",
+          "decl_label": "",
+          "decl_decltype": "0",
+          "decl_nbcontainers": "1",
+          "decl_conttype": "[GENAI_REVENGG_MFGDEC_CONTAINER]",
+          "decl_contlocation": "[GENAI_REVENGG_MFGDECL_LOCATION]",
+          "decl_equipcode": "",
+          "decl_unittype": "1",
+          "decl_returncode": "GENAI_REVENGG_MFGDECL_EXEREP  "
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 17,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LABELING_DEFAULT": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "LABELLING_TITLE",
+          "marqtype": "14",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "start_mod": "A",
+          "labelmodeltype": "MODEL_EQUIPMENT"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 14,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LABEL_IDENTIFICATION_DEFAULT": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "TITLE_LABEL IDENTIFICATION TAG",
+          "marqtype": "15",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 15,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "BARCODE_IDENTIFICATION": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "18",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 18,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "CONTAINER_IDENTIFICATION": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "22",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 22,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "EQUIPMENT_IDENTIFICATION": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "24",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 24,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "LINK": {
+      "html": {
+        "element": "anchor",
+        "attributes": {
+          "name": "<FILE_PATH>",
+          "title": "<LINK_NAME>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "href": "File:///<FILE_PATH>",
+          "target": "_blank",
+          "marqtype": "8",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "start_mod": "A"
+        },
+        "inner_text": "<LINK_NAME>"
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 8,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "PICTURE": {
+      "html": {
+        "element": "img",
+        "attributes": {
+          "width": "100",
+          "height": "100",
+          "id": "<LINK_ID_INT>",
+          "alt": "Picture",
+          "marqtype": "27",
+          "e2s_file": "",
+          "directory": "",
+          "copy_file": "0",
+          "copy_file_path": "",
+          "delete_file": "0",
+          "return_code": "",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 27,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "TEXT": {
+      "html": {
+        "element": "textarea",
+        "attributes": {
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "marqtype": "1",
+          "inputtype": "O",
+          "value": "[<PARAM_CODE>]",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        },
+        "inner_text": "[<PARAM_CODE>]"
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 1,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "4000",
+              "2": "null",
+              "3": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "NUMBER": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "2",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "default": "",
+          "val_min": "null",
+          "val_max": "null",
+          "val_tolmin": "null",
+          "val_tolmax": "null",
+          "default_value": "null",
+          "type_default_value": "0",
+          "comment": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 2,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "null",
+              "2": "null",
+              "3": "null",
+              "4": "null",
+              "5": "999",
+              "6": "E2S_NULL_STRING",
+              "7": "N",
+              "8": "E2S_NULL_STRING",
+              "9": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "DATE": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "3",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "default": "D",
+          "default_value": "null",
+          "type_default_value": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 3,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "0",
+              "2": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "TIME": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "text",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "[<PARAM_CODE>]",
+          "marqtype": "4",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "default": "D",
+          "default_value": "0",
+          "type_default_value": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 4,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "0",
+              "2": "0",
+              "3": "1"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "SIGNATURE": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "name": "<PARAM_CODE_PAD_26>",
+          "title": "<PARAM_CODE>",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "SIGN_TITLE",
+          "marqtype": "5",
+          "inputtype": "O",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 5,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {
+              "1": "0"
+            }
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    },
+    "ESIGN": {
+      "html": {
+        "element": "input",
+        "attributes": {
+          "type": "button",
+          "id": "<LINK_ID_INT>",
+          "contenteditable": "FALSE",
+          "value": "e-sign_title",
+          "marqtype": "21",
+          "e2s_metadata_serialize": "<BASE64_METADATA>",
+          "e2s_hidden": "0",
+          "signatoryreturn": "",
+          "access_rights": "1540=1; 1545=1; 0=0;",
+          "esign_commenttype": "0"
+        }
+      },
+      "xml": {
+        "Data_xml": {
+          "CODE": "<PARAM_CODE_PAD_26>",
+          "VERSION": 1
+        },
+        "Parameters_Datas_xml": {
+          "E2S_PARAMETER_HEADER": {
+            "BindingAlias": "E2S_NULL_STRING",
+            "Standard": "N",
+            "Family": "<FAMILY_NAME>",
+            "Description": "<HUMAN_READABLE_DESCRIPTION>",
+            "Type": 21,
+            "Status": "C",
+            "ParameterVersion": 1,
+            "ParameterCode": "<PARAM_CODE_PAD_26>"
+          },
+          "E2S_PARAMETER_EXTRA": {
+            "__root__": {}
+          }
+        },
+        "PI_Params_Links_Datas_xml": {
+          "MBRRelevant": "N",
+          "LinkEventComment": "E2S_NULL_STRING",
+          "LinkEventName": "E2S_NULL_STRING",
+          "LinkEventType": 0,
+          "LinkDescription": "E2S_NULL_STRING",
+          "LinkIndex": 1,
+          "LinkID": "<LINK_ID_INT>",
+          "LinkType": 1,
+          "ParameterVersion": 1,
+          "ParameterCode": "<PARAM_CODE_PAD_26>",
+          "PIVersion": 1,
+          "PICode": "<PICode>"
+        }
+      }
+    }
+  }
+}
